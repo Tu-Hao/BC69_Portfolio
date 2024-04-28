@@ -1,0 +1,235 @@
+.nav-item .nav-link.active {
+  /* khi chỉnh sửa các thuộc tính, nếu sử dụng importtant thì giá trị đó sẽ mạnh nhất, nếu có 2 giá trị mang important trở lên thì sẽ bắt đầu so sánh độ ưu tiên của các giá trị đó để tìm đc giá trị đc nhận */
+  color: #35a22c !important;
+}
+.nav-item a {
+  position: relative;
+}
+.nav-item a::before {
+  content: "";
+  background-color: #35a22c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  transition: all 1s;
+}
+header .collapse .nav-item .active::before {
+  width: 100%;
+}
+
+header .collapse .nav-item a:hover {
+  color: green !important   ;
+}
+
+header .collapse .nav-item a:hover::before {
+  width: 100%;
+}
+.cyber-carousel .carousel_text {
+  /* thêm 1 cách dùng để canh giữa các phần tử */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* color: #fff; */
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; */
+}
+.cyber-carousel .carousel_text img {
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+}
+.cyber-carousel .carousel_text h2 {
+  font-size: 56px;
+  font-weight: 350;
+}
+.cyber-carousel .carousel_text p {
+  font-size: 24px;
+  font-weight: 350;
+}
+/* tạo lớp phủ */
+.cyber-carousel .carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: rgba(39, 43, 54, 0.501);
+}
+.carousel-indicators [data-bs-target] {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: none;
+}
+.carousel-indicators .active {
+  background-color: #35a22c;
+}
+.cyber-project .nav-pills .nav-link.active {
+  background-color: green;
+  color: #fff !important;
+  border-color: green !important;
+}
+.nav-pills .nav-link {
+  color: #1a1d2d;
+    border: 1px solid #1a1d2d;
+    margin: 0 5px;
+}
+/* .cyber-project .nav-item .nav-link {
+  color: black;
+  border: 1px solid black !important;
+} */
+/* #pills-profile-tab.nav-link {
+  color: black;
+  border: 1px solid black !important;
+}
+#pills-tabContent.tab-content  .project_item{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* border-radius: 20px; */
+/* }
+#pills-tabContent.tab-content  .project_item img{
+width: 100%;
+border-radius: 20px 20px 0 0;
+} */
+/* #pills-tabContent.tab-content  .project_item{
+ padding: 20px;
+} */
+/* #pills-tabContent.tab-content  .project_item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  transition: all 0.5s;
+} */
+/* #pills-tabContent.tab-content  .project_item p {
+  font-size: 16px;
+}
+#pills-tabContent.tab-content  .project_item div{
+  padding: 20px;
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+  border: 2px solid green;
+  border-top: none;
+}
+#pills-tabContent.tab-content  .project_item h3:hover{
+  color: green;
+} */ 
+.cyber-project .project_item {
+  box-shadow: rgba(99, 99, 99, 0.151) 0px 2px 8px 0px;
+  cursor: pointer;
+
+}
+
+.cyber-project .project_item:hover h3 {
+  color: green;
+}
+
+.cyber-project .project_item .project_text {
+  border: 1px solid transparent;
+  border-top: none;
+  transition: all 0.5s;
+  /* opacity: 0; */
+}
+
+.cyber-project .project_item:hover .project_text {
+  border-color: green;
+}
+.cyber-available {
+  padding: 50px 0;
+  color: white;
+  background-image: url(./../image/3.jpg);
+  background-attachment: fixed;
+  height: 50vh;
+  position: relative;
+}
+
+.cyber-available::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 10, 12, 0.72);
+}
+
+.cyber-available .avai_item {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 30px;
+  text-align: center;
+}
+/* yêu cầu: khi để màn hình lớn hơn 1400px, thì sẽ thực hiện để tiêu đề của carousel màu trắng */
+/* khi ở màn hình dành cho mobile, các tiêu đề sẽ có màu cam */
+/* khi ở màn hình dành cho ipad từ 576px - 992px sẽ để các tiêu đề có màu đỏ */
+
+/* với giá trị max-width sẽ hỗ trợ lấy tất cả thiết bị màn hình có chiều dài từ 0 đến đúng chiều dài mà chúng ta để ở max-width */
+/* luôn luôn viết và điều chỉnh reponsive với giá trị max=width dành cho các màn hình lớn trước */
+/* giao diện mobile */
+/* @media screen and (max-width: 992px) {
+  .cyber-carousel .carousel_text h2{
+    font-size: 50px;
+    color: red
+  }
+}
+@media screen and (max-width: 576px) {
+  .cyber-carousel .carousel_text h2{
+    font-size: 30px;
+    color: orange
+  }
+} */
+
+/* yêu cầu bài tập: khách hàng yêu cầu ở các thiết bị từ 992 -1200 sẽ điều chỉnh logo màu tím */
+/* khách hàng yêu cầu thêm ở các thiết bị từ 0 - 992 sẽ điều chỉnh logo màu vàng */
+/* khách hàng yêu cầu ở màn hình mobile sẽ tăng kích thước hình ảnh avatar của banner lên 250px chiều dài và chiều cao */
+/* @media screen and (max-width: 1200px) {
+  .navbar-brand i,.navbar-brand span  {
+    color: purple !important;
+}
+}
+@media screen and (max-width: 992px) {
+  .navbar-brand i,.navbar-brand span  {
+    color: yellow !important;
+}
+.navbar-toggler {
+  color: white;
+  border: 2px solid white;
+}
+}
+@media screen and (max-width: 576px) {
+  .cyber-carousel .carousel_text img {
+    width: 50%;
+    height: 50%;
+
+}
+} */
+
+/* responsive web với min-width (mobile first) */
+/* Yêu cầu với tiêu đề của banner, khi ở các màn hình dành cho tablet từ 576 trở lên sẽ điều chỉnh màu chữ là màu đỏ còn các mobile sẽ có chữ trắng  */
+/* luôn luôn viết và điều chỉnh reponsive với giá trị min-width dành cho các màn hình nhỏ trước */
+@media screen and (min-width: 576px) {
+  .cyber-carousel .carousel_text h2{
+    font-size: 50px;
+    color: red;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .cyber-carousel .carousel_text h2{
+    font-size: 50px;
+    color: orange;
+  }
+}
